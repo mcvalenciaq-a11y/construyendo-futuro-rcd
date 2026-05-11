@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Paleta eco + industrial */
+    --olive-900: #2D3A1F;
+    --olive-700: #4A5D2E;
+    --olive-500: #6B8E3D;
+
+    --concrete-900: #1F1F1F;
+    --concrete-700: #3D3D3D;
+    --concrete-500: #6B6B6B;
+    --concrete-300: #BFBFBF;
+    --concrete-100: #F2F1ED;
+
+    --orange-600: #D97742;
+    --orange-500: #E89968;
+
+    --cream-50: #FBFAF7;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--cream-50);
+    color: var(--concrete-900);
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-outfit), var(--font-inter), sans-serif;
+    color: var(--olive-900);
+    letter-spacing: -0.01em;
+  }
+
+  /* Focus visible AA-compliant para teclado */
+  :focus-visible {
+    outline: 2px solid var(--orange-600);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Selección con acento corporativo */
+  ::selection {
+    background-color: var(--olive-500);
+    color: var(--cream-50);
+  }
+}
+
+@layer components {
+  /* Textura sutil de concreto para hero (SVG inline data URI) */
+  .bg-concrete-texture {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.9 0 0 0 0 0.9 0 0 0 0 0.9 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
